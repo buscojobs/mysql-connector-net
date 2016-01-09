@@ -45,7 +45,5 @@ using System.Runtime.InteropServices;
 [assembly: Guid("02681727-f306-4923-8c16-717d6f1716ce")]
 
 #if DEBUG
-[assembly: AssemblyDelaySign(true)]
 [assembly: AssemblyKeyFileAttribute(@"..\..\ConnectorNetPublicKey.snk")]
 #endif
-[assembly: AssemblyKeyName("ConnectorNet")]

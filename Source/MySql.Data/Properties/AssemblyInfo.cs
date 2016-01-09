@@ -78,11 +78,6 @@ using System.Security;
 //   (*) Delay Signing is an advanced option - see the Microsoft .NET Framework
 //       documentation for more information on this.
 //
-#if DEBUG
-[assembly: AssemblyDelaySign(true)]
-[assembly: AssemblyKeyFileAttribute(@"..\..\ConnectorNetPublicKey.snk")]
-#endif
-[assembly: AssemblyKeyName("ConnectorNet")]
 
 [assembly: InternalsVisibleTo("MySql.Data.Entity.EF6, PublicKey = 0024000004800000940000000602000000240000525341310004000001000100371e6b43db5e874ba8e5a7a274df47d993f87a687e96302ae052884c34be52b99ca127a3b20dc3b5ee5aec42726d2d527b6882a3f6ee65e0e32d3cd84cb1fd0088e8570df508ea7cc9a9bd5cd690583ab1a67ad491532acf57cd3bf88d50d04615aed8a79a8e42ea9b4d8125af19aae9bb41f0f35fb6f3b44ee5e56403bd28a0")]
 [assembly: InternalsVisibleTo("MySql.Data.Tests, PublicKey = 0024000004800000940000000602000000240000525341310004000001000100371e6b43db5e874ba8e5a7a274df47d993f87a687e96302ae052884c34be52b99ca127a3b20dc3b5ee5aec42726d2d527b6882a3f6ee65e0e32d3cd84cb1fd0088e8570df508ea7cc9a9bd5cd690583ab1a67ad491532acf57cd3bf88d50d04615aed8a79a8e42ea9b4d8125af19aae9bb41f0f35fb6f3b44ee5e56403bd28a0")]

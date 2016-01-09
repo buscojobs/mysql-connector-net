@@ -133,6 +133,12 @@
     <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>..\..\ConnectorNetPublicKey.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
   <Choose>
     <When Condition="'$(Framework)' == '4.5.1'">
       <Choose>
@@ -311,6 +317,9 @@
     <Reference Include="System.Security" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="..\..\ConnectorNetPublicKey.snk">
+      <Link>ConnectorNetPublicKey.snk</Link>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <Choose>

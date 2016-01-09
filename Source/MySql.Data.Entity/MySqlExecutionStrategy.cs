@@ -51,12 +51,14 @@ namespace MySql.Data.Entity
 
     static MySqlExecutionStrategy()
     {
-      errorsToRetryOn.Add( 1040, new BackoffAlgorithmErr1040() );  // Too many connections.
-      errorsToRetryOn.Add( 1205, new BackoffAlgorithmErr1205() );  // Lock wait timeout exceeded; try restarting transaction.
-      errorsToRetryOn.Add( 1213, new BackoffAlgorithmErr1213() );  // Deadlock found when trying to get lock; try restarting transaction.
-      errorsToRetryOn.Add( 1614, new BackoffAlgorithmErr1614() );  // Transaction branch was rolled back: deadlock was detected.
-      errorsToRetryOn.Add( 2006, new BackoffAlgorithmErr2006() );  // Server has gone away.
-      errorsToRetryOn.Add( 2013, new BackoffAlgorithmErr2013() );  // Lost connection to MySQL server during query.
+      errorsToRetryOn.Add(  1040, new BackoffAlgorithmErr1040() );  // Too many connections.
+      errorsToRetryOn.Add(  1205, new BackoffAlgorithmErr1205() );  // Lock wait timeout exceeded; try restarting transaction.
+      errorsToRetryOn.Add(  1213, new BackoffAlgorithmErr1213() );  // Deadlock found when trying to get lock; try restarting transaction.
+      errorsToRetryOn.Add(  1614, new BackoffAlgorithmErr1614() );  // Transaction branch was rolled back: deadlock was detected.
+      errorsToRetryOn.Add(  2006, new BackoffAlgorithmErr2006() );  // Server has gone away.
+      errorsToRetryOn.Add(  2013, new BackoffAlgorithmErr2013());   // Lost connection to MySQL server during query.
+      errorsToRetryOn.Add(220369, new BackoffAlgorithmErr1205());   // Error when changing database
+
       // TODO: Add MySql Cluster (Ndb) errors when Connector/NET correctly reports Cluster errors...
       // ...
     }

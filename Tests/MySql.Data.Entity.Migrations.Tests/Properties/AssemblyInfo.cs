@@ -56,7 +56,5 @@ using System.Runtime.InteropServices;
 // [assembly: AssemblyVersion("1.0.*")]
 
 #if DEBUG
-[assembly: AssemblyDelaySign(true)]
 [assembly: AssemblyKeyFileAttribute(@"..\..\ConnectorNetPublicKey.snk")]
 #endif
-[assembly: AssemblyKeyName("ConnectorNet")]

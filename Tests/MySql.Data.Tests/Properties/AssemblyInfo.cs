@@ -64,10 +64,8 @@ using System.Security;
 //       documentation for more information on this.
 //
 #if DEBUG
-[assembly: AssemblyDelaySign(true)]
 [assembly: AssemblyKeyFileAttribute(@"..\..\ConnectorNetPublicKey.snk")]
 #endif
-[assembly: AssemblyKeyName("ConnectorNet")]
 #if !CF && !RT
 [assembly: AllowPartiallyTrustedCallers]
 #endif

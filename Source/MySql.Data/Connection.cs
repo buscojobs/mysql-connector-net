@@ -416,11 +416,20 @@ namespace MySql.Data.MySqlClient
           Throw(new TransactionAbortedException());
         }
 #endif
-        // We use default command timeout for SetDatabase
-        using (new CommandTimer(this, (int)Settings.DefaultCommandTimeout))
+        
+        try
         {
-          driver.SetDatabase(databaseName);
+            // We use default command timeout for SetDatabase
+            using (new CommandTimer(this, (int)Settings.DefaultCommandTimeout))
+            {
+                driver.SetDatabase(databaseName);
+            }
         }
+        catch (Exception e)
+        {
+            throw new MySqlException("Error when setting database", 220369, e);
+        }
+    
       }
       this.database = databaseName;
     }
