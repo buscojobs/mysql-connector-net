@@ -46,21 +46,21 @@
         <DefineConstants>NET_40_OR_GREATER</DefineConstants>
       </PropertyGroup>
     </When>
-  </Choose>  
+  </Choose>
   <Choose>
     <When Condition="'$(Framework)' == '4.5.1'">
-      <ItemGroup>        
-			<None Include="App.Config" Condition="'$(Configuration)' == 'Debug' Or '$(Configuration)' == 'Release'">
-			  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-			  <SubType>Designer</SubType>
-			</None>
-			<None Include="EF6\App.Config" Condition="'$(Configuration)' == 'DebugEF6' Or '$(Configuration)' == 'ReleaseEF6'">
-			  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-			  <SubType>Designer</SubType>
-			</None>
-		</ItemGroup>
-	</When>
-  </Choose>  
+      <ItemGroup>
+        <None Include="App.Config" Condition="'$(Configuration)' == 'Debug' Or '$(Configuration)' == 'Release'">
+          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+          <SubType>Designer</SubType>
+        </None>
+        <None Include="EF6\App.Config" Condition="'$(Configuration)' == 'DebugEF6' Or '$(Configuration)' == 'ReleaseEF6'">
+          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+          <SubType>Designer</SubType>
+        </None>
+      </ItemGroup>
+    </When>
+  </Choose>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
@@ -131,14 +131,7 @@
             </Reference>
           </ItemGroup>
         </When>
-        <Otherwise>
-          <ItemGroup>
-            <Reference Include="EntityFramework, Version=0.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-              <SpecificVersion>False</SpecificVersion>
-              <HintPath>C:\Program Files (x86)\Microsoft ADO.NET Entity Framework 5.0.0\lib\net45\EntityFramework.dll</HintPath>
-            </Reference>
-          </ItemGroup>
-        </Otherwise>
+        <Otherwise />
       </Choose>
     </When>
     <When Condition=" '$(VisualStudioVersion)' == '11.0'">
@@ -196,19 +189,22 @@
     <Reference Include="EntityFramework">
       <HintPath>..\..\..\..\Program Files (x86)\Microsoft ADO.NET Entity Framework 6.0.0-beta1\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
     <Reference Include="xunit, Version=1.9.2.1705, Culture=neutral, PublicKeyToken=8d05b1bb7a6fdb6c, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Program Files (x86)\XUnit-1.9.2\xunit.dll</HintPath>
+      <HintPath>..\..\packages\xunit.1.9.2\lib\net20\xunit.dll</HintPath>
+      <Private>True</Private>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -220,7 +216,7 @@
     <Compile Include="MySqlMigrationsTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SetUpMigrationsTests.cs" />
-  </ItemGroup> 
+  </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
@@ -241,6 +237,9 @@
       <Project>{F29E5B3D-7F76-4CF9-BF5E-8E3A1377B1E4}</Project>
       <Name>MySql.Data.Tests</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
